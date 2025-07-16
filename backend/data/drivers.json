@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Max Verstappen",
+    "team": "Red Bull",
+    "ovr": 95,
+    "experience": 87,
+    "racecraft": 96,
+    "awareness": 85,
+    "pace": 96,
+    "strengths": ["High speed cornering", "Braking"],
+    "weaknesses": ["Crash prone"],
+    "home_gp": "Netherlands",
+    "recent_results": ["P1", "P3", "P1"],
+    "qualifying_position": 3
+  },
+  {
+    "name": "Lando Norris",
+    "team": "McLaren",
+    "ovr": 91,
+    "experience": 81,
+    "racecraft": 89,
+    "awareness": 80,
+    "pace": 94,
+    "strengths": ["Cornering", "Wet weather"],
+    "weaknesses": ["Starts"],
+    "home_gp": "UK",
+    "recent_results": ["P2", "P2", "P4"],
+    "qualifying_position": 2
+  },
+  {
+    "name": "Charles Leclerc",
+    "team": "Ferrari",
+    "ovr": 91,
+    "experience": 81,
+    "racecraft": 95,
+    "awareness": 93,
+    "pace": 90,
+    "strengths": ["Qualifying", "Braking"],
+    "weaknesses": ["Wet weather"],
+    "home_gp": "Monaco",
+    "recent_results": ["P3", "P5", "P2"],
+    "qualifying_position": 1
+  },
+  {
+    "name": "Lewis Hamilton",
+    "team": "Ferrari",
+    "ovr": 89,
+    "experience": 98,
+    "racecraft": 90,
+    "awareness": 90,
+    "pace": 87,
+    "strengths": ["Wet weather", "Starts"],
+    "weaknesses": ["Qualifying"],
+    "home_gp": "UK",
+    "recent_results": ["P5", "P4", "P3"],
+    "qualifying_position": 5
+  }
+]

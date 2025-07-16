@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Red Bull",
+    "tier": "Top",
+    "strengths": ["Top speed", "High speed cornering"],
+    "weaknesses": ["Tire wear"]
+  },
+  {
+    "name": "McLaren",
+    "tier": "Top",
+    "strengths": ["Cornering", "Aero efficiency"],
+    "weaknesses": ["Straight line speed"]
+  },
+  {
+    "name": "Ferrari",
+    "tier": "Top",
+    "strengths": ["Braking", "Qualifying"],
+    "weaknesses": ["Wet weather"]
+  },
+  {
+    "name": "Mercedes",
+    "tier": "Top",
+    "strengths": ["Race pace", "Reliability"],
+    "weaknesses": ["Qualifying"]
+  }
+]
