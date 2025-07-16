@@ -1,0 +1,22 @@
+[
+  {"name": "Max Verstappen", "team": "Red Bull", "overall": 95, "experience": 87, "racecraft": 96, "awareness": 85, "pace": 96, "strengths": ["high speed cornering", "braking"], "weaknesses": ["crash prone"], "home_gp": "Netherlands"},
+  {"name": "Lando Norris", "team": "McLaren", "overall": 91, "experience": 81, "racecraft": 89, "awareness": 80, "pace": 94, "strengths": ["qualifying", "wet weather"], "weaknesses": ["starts"], "home_gp": "UK"},
+  {"name": "Charles Leclerc", "team": "Ferrari", "overall": 91, "experience": 81, "racecraft": 95, "awareness": 93, "pace": 90, "strengths": ["qualifying", "high speed cornering"], "weaknesses": ["crash prone"], "home_gp": "Monaco"},
+  {"name": "George Russell", "team": "Mercedes", "overall": 90, "experience": 81, "racecraft": 92, "awareness": 84, "pace": 90, "strengths": ["qualifying", "consistency"], "weaknesses": ["tyre management"], "home_gp": "UK"},
+  {"name": "Carlos Sainz Jr.", "team": "Williams", "overall": 90, "experience": 87, "racecraft": 96, "awareness": 88, "pace": 88, "strengths": ["racecraft", "tyre management"], "weaknesses": ["qualifying"], "home_gp": "Spain"},
+  {"name": "Lewis Hamilton", "team": "Ferrari", "overall": 89, "experience": 98, "racecraft": 90, "awareness": 90, "pace": 87, "strengths": ["wet weather", "braking"], "weaknesses": ["slow starts"], "home_gp": "UK"},
+  {"name": "Fernando Alonso", "team": "Aston Martin", "overall": 88, "experience": 99, "racecraft": 90, "awareness": 81, "pace": 87, "strengths": ["racecraft", "wet weather"], "weaknesses": ["age"], "home_gp": "Spain"},
+  {"name": "Oscar Piastri", "team": "McLaren", "overall": 87, "experience": 72, "racecraft": 92, "awareness": 86, "pace": 87, "strengths": ["tyre management", "consistency"], "weaknesses": ["experience"], "home_gp": "Australia"},
+  {"name": "Pierre Gasly", "team": "Alpine", "overall": 86, "experience": 82, "racecraft": 88, "awareness": 79, "pace": 86, "strengths": ["street circuits", "qualifying"], "weaknesses": ["consistency"], "home_gp": "France"},
+  {"name": "Esteban Ocon", "team": "Haas", "overall": 85, "experience": 81, "racecraft": 86, "awareness": 79, "pace": 85, "strengths": ["wet weather", "defending"], "weaknesses": ["crash prone"], "home_gp": "France"},
+  {"name": "Nico Hulkenberg", "team": "Sauber", "overall": 84, "experience": 87, "racecraft": 86, "awareness": 85, "pace": 82, "strengths": ["qualifying", "consistency"], "weaknesses": ["race starts"], "home_gp": "Germany"},
+  {"name": "Alexander Albon", "team": "Williams", "overall": 83, "experience": 81, "racecraft": 82, "awareness": 78, "pace": 85, "strengths": ["racecraft", "defending"], "weaknesses": ["starts"], "home_gp": "Thailand"},
+  {"name": "Yuki Tsunoda", "team": "Red Bull", "overall": 82, "experience": 77, "racecraft": 78, "awareness": 77, "pace": 85, "strengths": ["street circuits", "starts"], "weaknesses": ["crash prone"], "home_gp": "Japan"},
+  {"name": "Liam Lawson", "team": "Racing Bulls", "overall": 80, "experience": 54, "racecraft": 76, "awareness": 75, "pace": 85, "strengths": ["adaptability"], "weaknesses": ["rookie"], "home_gp": "New Zealand"},
+  {"name": "Lance Stroll", "team": "Aston Martin", "overall": 78, "experience": 83, "racecraft": 81, "awareness": 78, "pace": 76, "strengths": ["starts"], "weaknesses": ["qualifying", "consistency"], "home_gp": "Canada"},
+  {"name": "Oliver Bearman", "team": "Haas", "overall": 74, "experience": 52, "racecraft": 84, "awareness": 65, "pace": 73, "strengths": ["youth", "qualifying"], "weaknesses": ["rookie"], "home_gp": "UK"},
+  {"name": "Gabriel Bortoleto", "team": "Sauber", "overall": 74, "experience": 50, "racecraft": 76, "awareness": 68, "pace": 77, "strengths": ["youth"], "weaknesses": ["rookie"], "home_gp": "Brazil"},
+  {"name": "Jack Doohan", "team": "Alpine", "overall": 73, "experience": 51, "racecraft": 71, "awareness": 67, "pace": 78, "strengths": ["qualifying"], "weaknesses": ["rookie"], "home_gp": "Australia"},
+  {"name": "Kimi Antonelli", "team": "Mercedes", "overall": 72, "experience": 50, "racecraft": 67, "awareness": 79, "pace": 76, "strengths": ["youth"], "weaknesses": ["rookie"], "home_gp": "Italy"},
+  {"name": "Isack Hadjar", "team": "Racing Bulls", "overall": 68, "experience": 51, "racecraft": 66, "awareness": 65, "pace": 72, "strengths": ["qualifying"], "weaknesses": ["rookie"], "home_gp": "France"}
+] 
