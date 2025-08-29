@@ -1,5 +1,41 @@
 # F1 Prediction Model
 
+## Run API (FastAPI with Uvicorn/Astra)
+
+Install deps:
+
+```
+pip install -r backend/requirements.txt
+```
+
+Run API:
+
+```
+uvicorn backend.main:app --host 0.0.0.0 --port 8000
+```
+
+Health check: `GET /health`
+
+Predict: `POST /predict` with JSON body:
+
+```
+{
+  "track": "ITA",
+  "weather": "dry",
+  "safety_car_chance": 0.2,
+  "qualifying": {"Lando Norris": 2, "Max Verstappen": 1},
+  "recent_results": {"Lando Norris": ["P2", "P1"], "Lewis Hamilton": ["DNF"]}
+}
+```
+
+## Run Streamlit UI
+
+```
+streamlit run streamlit_app.py
+```
+
+# F1 Prediction Model
+
 ## Overview
 This project predicts Formula 1 race results using a custom scoring system that accounts for driver skills, team strengths, track traits, and more. The backend is written in Python and can be run locally to generate predictions for any race on the calendar.
 

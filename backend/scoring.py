@@ -28,31 +28,50 @@ def get_team_info(team_name, teams):
     return None
 
 def get_team_tier_and_luck(team_name):
-    # Updated: best to worst teams as per user
+    # Ordered best → worst matching names in teams.json
     best_to_worst = [
-        "McLaren-Mercedes",
+        "McLaren",
         "Ferrari",
         "Mercedes",
-        "Red Bull Racing-Honda RBPT",
-        "Williams-Mercedes",
-        "Kick Sauber-Ferrari",
-        "Racing Bulls-Honda RBPT",
-        "Aston Martin Aramco-Mercedes",
-        "Haas-Ferrari",
-        "Alpine-Renault"
+        "Red Bull",
+        "Williams",
+        "Sauber",
+        "Racing Bulls",
+        "Aston Martin",
+        "Haas",
+        "Alpine",
     ]
-    team_name_lower = team_name.lower()
+    team_name_lower = team_name.strip().lower()
     if team_name_lower == best_to_worst[0].lower():
         return ("top", 1.0, 2)
     elif team_name_lower in [t.lower() for t in best_to_worst[1:3]]:
-        return ("upper-mid", 0.95, 1)
+        return ("upper-mid", 0.97, 1)
     elif team_name_lower in [t.lower() for t in best_to_worst[3:7]]:
-        return ("mid", 0.9, 0)
+        return ("mid", 0.93, 0)
     else:
-        return ("low", 0.85, -1)
+        return ("low", 0.9, -1)
+
+def _base_driver_score(driver):
+    # Use numeric attributes if present; fall back to sensible defaults
+    overall = driver.get("overall", driver.get("ovr", 80))
+    pace = driver.get("pace", 80)
+    racecraft = driver.get("racecraft", 80)
+    awareness = driver.get("awareness", 80)
+    experience = driver.get("experience", 80)
+    # Weighted blend emphasizing pace and racecraft
+    return (
+        overall * 0.2 +
+        pace * 0.4 +
+        racecraft * 0.25 +
+        awareness * 0.1 +
+        experience * 0.05
+    ) / 10.0  # scale down
+
 
 def calculate_performance_score(driver, team, track, weather="dry", safety_car_chance=0.0, qualifying=None, recent_results=None):
     score = 0
+    # Base driver ability component
+    score += _base_driver_score(driver)
     # Team trait matches (reduced weight)
     for trait in track['traits']:
         if 'strengths' in team and trait.lower() in [s.lower() for s in team['strengths']]:
@@ -65,14 +84,14 @@ def calculate_performance_score(driver, team, track, weather="dry", safety_car_c
     # Driver trait matches (increased weight)
     for trait in track['traits']:
         if 'strengths' in driver and trait.lower() in [s.lower() for s in driver['strengths']]:
-            score += 6
+            score += 4.5
         if 'weaknesses' in driver and trait.lower() in [w.lower() for w in driver['weaknesses']]:
-            score -= 8
+            score -= 5.5
     # Weather dynamics
     if weather == "wet":
-        if "wet weather" in driver.get("strengths", []):
+        if "wet weather" in [s.lower() for s in driver.get("strengths", [])]:
             score += 3
-        if "wet weather" in driver.get("weaknesses", []):
+        if "wet weather" in [w.lower() for w in driver.get("weaknesses", [])]:
             score -= 3
         # Increase luck/instability in wet
         awareness = driver.get('awareness', 80)
@@ -96,6 +115,31 @@ def calculate_performance_score(driver, team, track, weather="dry", safety_car_c
         instability = (100 - awareness) / 100
         luck_base = random.uniform(-2, 2) * 10 * instability * safety_car_chance
         score += luck_base
+
+    # Qualifying influence (lower position number is better)
+    if qualifying and isinstance(qualifying, dict):
+        qpos = qualifying.get(driver.get('name'))
+        if isinstance(qpos, int) and 1 <= qpos <= 20:
+            score += (21 - qpos) * 0.35
+
+    # Recent momentum: simple +1 per recent top-5, -1 per DNF
+    if recent_results and isinstance(recent_results, dict):
+        results = recent_results.get(driver.get('name')) or []
+        for r in results:
+            ru = r.strip().upper()
+            if ru.startswith('P'):
+                try:
+                    pos = int(ru[1:])
+                    if pos <= 5:
+                        score += 1
+                except ValueError:
+                    pass
+            if 'DNF' in ru:
+                score -= 1.5
+    # Home GP slight bump
+    home_gp = driver.get('home_gp')
+    if home_gp and isinstance(track, dict) and home_gp.lower() in track.get('name', '').lower():
+        score += 0.75
     return score
 
 def predict_spa_for_all_drivers():
